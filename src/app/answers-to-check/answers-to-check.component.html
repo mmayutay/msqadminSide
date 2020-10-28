@@ -1,0 +1,21 @@
+<app-sidenav></app-sidenav>
+<div id="card">
+    <h2>Score: {{correct}} |</h2>
+    <h2>| Mistakes:{{wrong}}</h2>
+    <table>
+        <tr>
+            <th>Questions</th>
+            <th>Answers</th>
+            <th>Correct</th>
+            <th>Wrong</th>
+        </tr>
+        <tr *ngFor="let val of arrayOfQuestions; let i = index">
+            <td>{{val.question.question}}</td>
+            <td>{{val.answer}}</td>
+            <td><input type="radio" [name]="val.answer" (click)="corrected(true)" ></td>
+            <td><input type="radio" [name]="val.answer"  (click)="wronged(false)" ></td>
+        </tr>    
+    </table><br>
+    <button>Save Score</button>
+</div>
+<app-footer></app-footer>

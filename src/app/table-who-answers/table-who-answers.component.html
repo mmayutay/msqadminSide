@@ -1,0 +1,20 @@
+<app-sidenav></app-sidenav>
+<div class="card">
+    <table>
+        <tr>
+            <th>No.</th>
+            <th>Email</th>
+            <th>View / Update</th>
+            <th>Score</th>
+            <th>Delete</th>
+        </tr>
+        <tr *ngFor="let val of peopleWhoAnswers; let i = index;">
+            <td>{{ i + 1}}</td>
+            <td>{{ val.owner.name }}</td>
+            <td><button id="viewEdit" (click)="answerChecking(val)">{{typeButton}}</button></td>
+            <td> {{val.score.score}} </td>
+            <td><button id="delete" (click)="deleteItem(val)">Delete</button></td>
+        </tr>
+    </table>
+</div>
+<app-footer></app-footer>

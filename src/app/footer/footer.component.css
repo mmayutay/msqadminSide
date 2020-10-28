@@ -1,0 +1,38 @@
+.footer {
+    height: 100%;
+    width: 100%;
+    margin-top: 10%;
+    min-width: 600px;
+}
+h2 {
+    padding: 20px;
+    margin: 0;
+}
+div.linkingImages {
+    background-color: rgb(161, 161, 161);
+    float: left;
+    width: 180px;
+}
+div.linkingImages a {
+    text-decoration: none;
+    color: black;
+}
+div.linkingImages:hover {
+    background-color: rgb(170, 170, 170);
+}
+div.linkingImages img{
+    padding: 10px;
+    width: 60px;
+    height: 53px;
+    border-radius: 50%; 
+}
+.center {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.marginLeft {
+    margin-left: 10%;
+}

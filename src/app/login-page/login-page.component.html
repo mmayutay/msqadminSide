@@ -1,0 +1,18 @@
+<div class="card">
+    <img src="https://static.wixstatic.com/media/bc9755_bc5f10f99c8449fda8666675a6b4b5b0~mv2.png/v1/fill/w_131,h_101,al_c,q_85,usm_0.66_1.00_0.01/MsQ%20logo.webp">
+    <h1>Ms.Q Associates</h1>
+    <form>
+        <div class="container">
+            <div class="input-icons">
+                <i class="fa fa-user icon" for="user"></i>
+                <input autocomplete="off" placeholder="Username" type="text" [(ngModel)]="userdata.username" name="user">
+            </div>
+            <div class="input-icons">
+                <i class="fa fa-key icon" for="pass"></i>
+                <input placeholder="Password" type="password" [(ngModel)]="userdata.password" name="pass"><br><br>
+            </div>
+            <button (click)="logIn()">Log-in</button>
+        </div>
+    </form>
+    <p><u>Forgot Username/Password?</u></p>
+</div>
