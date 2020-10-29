@@ -57,3 +57,9 @@ tr:hover {
  h2 {
      float: left;
  }
+ .correct {
+     background-color: rgba(25, 255, 35, 0.5);
+ }
+ .wrong {
+     background-color: rgb(254, 142, 142);
+ }
