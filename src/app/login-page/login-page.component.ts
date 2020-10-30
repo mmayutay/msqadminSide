@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { RequestService } from '../request.service';
+import { RequestService } from '../../../Services/request.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
-  public userdata = {username: "", password: ""} 
+  public userdata = {username: "", password: ""}; 
   public bool;
 
   constructor(
@@ -26,7 +26,7 @@ export class LoginPageComponent implements OnInit {
       if (this.bool.success) {
         this.router.navigate(['/home'])
       }else {
-        Swal.fire("Snap!", "User or Password error!", "error")
+        Swal.fire("Snap!", "User or Password is incorrect!", "error")
       }
     })
   }

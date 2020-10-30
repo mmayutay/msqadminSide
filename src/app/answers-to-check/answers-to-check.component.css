@@ -21,13 +21,14 @@ tr:hover {
     border-radius: 5px;
     background-color: rgb(206, 206, 206);
     margin-top: 5%;
-    margin-left: 18%;
+    margin-left: 20%;
     text-align: center;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     min-width: 600px;
     width: 60%;
     padding: 20px;
+    margin-bottom: 20%;
   }
   input[type=radio] {
       border: 0px;
@@ -35,27 +36,31 @@ tr:hover {
       height: 1.3em;
   }
   button {
-    padding: 13px;
-    font-size: 20px;
+    padding: 10px;
+    font-size: 15px;
     text-align: center;
     cursor: pointer;
     outline: none;
     color: #fff;
-    background-color: #4CAF50;
+    background-color: rgb(129, 129, 129);
     border: none;
-    border-radius: 15px;
+    border-radius: 5px;
     box-shadow: 0 9px #999;
   }
   button:hover {
-    background-color: #3e8e41
+    background-color: #0de06c
   }
   button:active {
-    background-color: #3e8e41;
+    background-color: #0de06c;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
   }
  h2 {
      float: left;
+ }
+ h1 {
+     text-align: center;
+     margin-bottom: 0;
  }
  .correct {
      background-color: rgba(25, 255, 35, 0.5);

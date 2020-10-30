@@ -1,5 +1,6 @@
 <app-sidenav></app-sidenav>
 <div id="card">
+    <h1>{{applicantsName}}</h1>
     <h2>Score: {{correct.length}} |</h2>
     <h2>| Mistakes:{{wrong.length}}</h2>
     <table>
@@ -16,6 +17,6 @@
             <td><input type="radio" [name]="val.answer" (click)="wronged(val.answer)"></td>
         </tr>
     </table><br>
-    <button>Save Score</button>
+    <button (click)="submitScores()">Save Score</button>
 </div>
 <app-footer></app-footer>
