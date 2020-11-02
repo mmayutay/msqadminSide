@@ -1,18 +1,19 @@
 .footer {
-    position: fixed;
     left: 0;
     bottom: 0;
-    width: 100%;
-    height: 25%;
-    background-color: rgb(80, 80, 80);
+    width: auto;
+    height: auto;
+    background-color: rgb(117, 117, 117);
     color: white;
     text-align: center;
     padding: 10px;
-    margin-left: 3%;
+    margin-left: 7px;
+    min-width: 600px;
  }
-h2 {
+.contact {
     text-align: center;
     padding: 5px;
+    font-size: 30px;
     margin: 0;
 }
 .center {

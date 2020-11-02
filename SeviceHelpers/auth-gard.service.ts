@@ -2,14 +2,17 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { TokenPayload, TokenResponse } from 'Models/UserDetails.model';
-import { map } from 'rxjs/operators'
+import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGardService {
   private token: String
 
-  constructor(private httpClient: HttpClient, private http: Router) { }
+  constructor(
+    private httpClient: HttpClient,
+    private http: Router
+    ) { }
 
   saveToken(token) {
     localStorage.setItem("mean-token", token);
@@ -52,7 +55,7 @@ export class AuthGardService {
     }
     return false;
   }
-  request(user) {
+  request(url, user) {
     let base;
     base = this.httpClient.post("http://localhost:8080/login", { username: user.username, password: user.password })
 
@@ -61,7 +64,7 @@ export class AuthGardService {
         if (data.token) {
           this.saveToken(data.token)
         }
-        return data
+        return {url: url, data: data}
       }))
     return request;
   }

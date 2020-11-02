@@ -9,6 +9,7 @@ import { checkingAnswers } from '../../../Models/correctingData.model'
   styleUrls: ['./answers-to-check.component.css']
 })
 export class AnswersToCheckComponent implements OnInit {
+  public boolean = true
   public applicantsName = ""
   public value = new checkingAnswers()
   public correct = []
@@ -36,9 +37,11 @@ export class AnswersToCheckComponent implements OnInit {
     })
   }
   corrected(val) {
+    document.getElementById(val).style.backgroundColor = "rgb(93, 211, 123)"
     this.value.answerChecking(this.wrong, this.correct, val)
   }
   wronged(val) {
+    document.getElementById(val).style.backgroundColor = "rgba(250, 113, 99, 0.5)"
     this.value.answerIsWrong(this.wrong, this.correct, val)
   }
 

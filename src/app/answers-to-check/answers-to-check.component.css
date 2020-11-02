@@ -51,7 +51,7 @@ tr:hover {
     background-color: #0de06c
   }
   button:active {
-    background-color: #0de06c;
+    background-color: #999;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
   }

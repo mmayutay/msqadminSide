@@ -10,7 +10,7 @@
             <th>Correct</th>
             <th>Wrong</th>
         </tr>
-        <tr *ngFor="let val of arrayOfQuestions; let i = index">
+        <tr *ngFor="let val of arrayOfQuestions; let i = index" [id]="val.answer">
             <td>{{val.question.question}}</td>
             <td>{{val.answer}}</td>
             <td><input type="radio" [name]="val.answer" (click)="corrected(val.answer)"></td>

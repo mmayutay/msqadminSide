@@ -6,7 +6,8 @@ import { AuthGardService } from "../SeviceHelpers/auth-gard.service"
   providedIn: 'root'
 })
 export class RequestService {
-  public url = "http://localhost:8080"
+  public url = "http://localhost:8080";
+  public attemptedUrl = ""
 
   constructor(
     private http: HttpClient,
@@ -20,9 +21,12 @@ export class RequestService {
     return this.http.get(this.url + "/getScore");
   }
   logIn(data) {
-    return this.request.request(data)
+    return this.request.request(this.attemptedUrl, data)
   }
   allUsers() {
     return this.http.get(this.url + "/allUsers")
+  }
+  getCurrentUser() {
+    return this.http.get(this.url + "/currentUser")
   }
 }

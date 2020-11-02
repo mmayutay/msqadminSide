@@ -1,0 +1,11 @@
+#wholeFeatures {
+    position: fixed;
+    width: 60%;
+    height: 100%;
+    min-width: 500px;
+}
+img {
+    padding-top: 6%;
+    width: 200px;
+    height: 200px;
+}

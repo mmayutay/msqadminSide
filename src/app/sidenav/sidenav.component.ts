@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, Input } from '@angular/core';
 import { Router } from "@angular/router";
 import Swal from 'sweetalert2';
-import { AuthGardService } from "../../../SeviceHelpers/auth-gard.service"
+import { AuthGardService } from "../../../SeviceHelpers/auth-gard.service";
+import { RequestService } from "../../../Services/request.service";
 
 @Component({
   selector: 'app-sidenav',
@@ -9,18 +10,24 @@ import { AuthGardService } from "../../../SeviceHelpers/auth-gard.service"
   styleUrls: ['./sidenav.component.css']
 })
 export class SidenavComponent implements OnInit {
+  public User = {}
   public hideNav = false
 
   constructor(
     private router: Router,
-    private http: AuthGardService
+    private http: AuthGardService,
+    private request: RequestService
   ) { }
 
   ngOnInit(): void {
+    this.request.getCurrentUser().subscribe((data) => {
+      this.User = data
+    })
   }
 
   logOut() {
     this.http.logout()
+    this.request.attemptedUrl = ""
     Swal.fire({
       title: 'Good Bye!',
       text: "See you sooner or later!",

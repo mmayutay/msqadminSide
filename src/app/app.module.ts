@@ -10,6 +10,7 @@ import { TableWhoAnswersComponent } from './table-who-answers/table-who-answers.
 import { AnswersToCheckComponent } from './answers-to-check/answers-to-check.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { FooterComponent } from './footer/footer.component';
+import { CompanyDetailsComponent } from './company-details/company-details.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FooterComponent } from './footer/footer.component';
     TableWhoAnswersComponent,
     AnswersToCheckComponent,
     SidenavComponent,
-    FooterComponent
+    FooterComponent,
+    CompanyDetailsComponent
   ],
   imports: [
     HttpClientModule,

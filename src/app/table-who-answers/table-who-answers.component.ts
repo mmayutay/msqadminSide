@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {RequestService} from '../../../Services/request.service';
 import { Router } from '@angular/router'
 
@@ -8,6 +8,7 @@ import { Router } from '@angular/router'
   styleUrls: ['./table-who-answers.component.css']
 })
 export class TableWhoAnswersComponent implements OnInit {
+  public CompanyName = "Amazon"
   public counter = 0
   public applicantsData;
   public peopleWhoAnswers = [];
@@ -32,6 +33,9 @@ export class TableWhoAnswersComponent implements OnInit {
             this.peopleWhoAnswers.push({owner: owner, score: score})
           }
         })
+        if(!this.peopleWhoAnswers.includes(owner)) {
+          this.peopleWhoAnswers.push({owner: owner, score: 0})
+        }
       })
     })
   }
