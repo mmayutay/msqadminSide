@@ -1,21 +1,28 @@
 <app-sidenav></app-sidenav>
 <p class="company">{{CompanyName}}</p>
-<div class="card">
-    <table>
-        <tr>
-            <th>No.</th>
-            <th>Email</th>
-            <th>View / Update</th>
-            <th>Score</th>
-            <th>Delete</th>
-        </tr>
-        <tr *ngFor="let val of peopleWhoAnswers; let i = index;">
-            <td>{{ i + 1}}</td>
-            <td>{{ val.owner.name }}</td>
-            <td><button id="viewEdit" (click)="answerChecking(val)">{{typeButton}}</button></td>
-            <td> {{val.score.score}} </td>
-            <td><button id="delete" (click)="deleteItem(val)">Delete Appllicant</button></td>
-        </tr>
-    </table>
+<div *ngIf="deleted" class="deletedItem">
+    <div class="deletedRow">
+        <p>You've deleted {{counter}} Row! <i class="fa fa-check-circle" aria-hidden="true"></i></p>
+    </div>
+</div>
+<div class="w3-container w3-center w3-animate-top">
+    <div class="card">
+        <table>
+            <tr id="header">
+                <td>No.</td>
+                <td>Email</td>
+                <td>View / Update</td>
+                <td>Score</td>
+                <td>Delete</td>
+            </tr>
+            <tr *ngFor="let val of peopleWhoAnswers; let i = index;" id="{{val.owner.name}}{{i}}">
+                <td>{{ i + 1}}</td>
+                <td>{{ val.owner.name }}</td>
+                <td><button id="viewEdit" (click)="answerChecking(val)">{{typeButton}}</button></td>
+                <td> {{val.score.score}} </td>
+                <td><button id="delete" (click)="deleteItem(val.owner.name, i)">Delete Appllicant</button></td>
+            </tr>
+        </table>
+    </div>
 </div>
 <app-footer></app-footer>

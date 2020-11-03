@@ -1,22 +1,24 @@
 <app-sidenav></app-sidenav>
-<div id="card">
-    <h1>{{applicantsName}}</h1>
-    <h2>Score: {{correct.length}} |</h2>
-    <h2>| Mistakes:{{wrong.length}}</h2>
-    <table>
-        <tr>
-            <th>Questions</th>
-            <th>Answers</th>
-            <th>Correct</th>
-            <th>Wrong</th>
-        </tr>
-        <tr *ngFor="let val of arrayOfQuestions; let i = index" [id]="val.answer">
-            <td>{{val.question.question}}</td>
-            <td>{{val.answer}}</td>
-            <td><input type="radio" [name]="val.answer" (click)="corrected(val.answer)"></td>
-            <td><input type="radio" [name]="val.answer" (click)="wronged(val.answer)"></td>
-        </tr>
-    </table><br>
-    <button (click)="submitScores()">Save Score</button>
+<div class="w3-container w3-center w3-animate-top">
+    <div id="card">
+        <h1>{{applicantsName}}</h1>
+        <h2>Score: {{correct.length}} |</h2>
+        <h2>| Mistakes:{{wrong.length}}</h2>
+        <table>
+            <tr id="header">
+                <td>Questions</td>
+                <td>Answers</td>
+                <td>Correct</td>
+                <td>Wrong</td>
+            </tr>
+            <tr *ngFor="let val of arrayOfQuestions; let i = index" [id]="val.answer">
+                <td>{{val.question.question}}</td>
+                <td>{{val.answer}}</td>
+                <td><input type="radio" [name]="val.answer" (click)="corrected(val.answer)"></td>
+                <td><input type="radio" [name]="val.answer" (click)="wronged(val.answer)"></td>
+            </tr>
+        </table><br>
+        <button (click)="submitScores()">Save Score</button>
+    </div>
 </div>
 <app-footer></app-footer>

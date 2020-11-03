@@ -5,7 +5,7 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgba(58, 58, 58, 0.5);
+    background-color: rgba(197, 220, 255, 0.5);
     overflow-x: hidden;
     margin-left: 40px;
   }
@@ -20,7 +20,7 @@
   }
   
   .sidenav a:hover {
-    color: #f1f1f1;
+    color: #a3a2a2;
   }
   .miniSideNav {
     height: 100%;
@@ -29,7 +29,7 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgb(116, 116, 116);
+    background-color: rgba(120, 161, 207, 0.5);
     overflow-x: hidden;
     padding-top: 20px;
     transition: 2s;
@@ -37,7 +37,7 @@
 
   i {
     margin-bottom: 25px;
-    color: #f1f1f1;
+    color: #070707;
   }
   .currentLogged {
       margin-bottom: 50px;

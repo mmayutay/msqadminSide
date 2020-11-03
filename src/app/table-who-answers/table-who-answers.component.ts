@@ -8,6 +8,7 @@ import { Router } from '@angular/router'
   styleUrls: ['./table-who-answers.component.css']
 })
 export class TableWhoAnswersComponent implements OnInit {
+  public deleted = false
   public CompanyName = "Amazon"
   public counter = 0
   public applicantsData;
@@ -44,8 +45,10 @@ export class TableWhoAnswersComponent implements OnInit {
     this.router.navigate(['checking-answers/' + applicantdata.owner._id])
   }
 
-  deleteItem(data) {
-    console.log(data)
+  deleteItem(data, index) {
+    this.peopleWhoAnswers.splice(index, 1)
+    this.deleted = true
+    this.counter += 1
   }
 
 }

@@ -33,7 +33,8 @@ export class SidenavComponent implements OnInit {
       text: "See you sooner or later!",
       icon: 'success',
       allowOutsideClick: false
-    })
+    });
+    
     this.router.navigate(['login'])
   }
 

@@ -37,11 +37,11 @@ export class AnswersToCheckComponent implements OnInit {
     })
   }
   corrected(val) {
-    document.getElementById(val).style.backgroundColor = "rgb(93, 211, 123)"
+    document.getElementById(val).style.backgroundColor = "rgb(171, 255, 195)"
     this.value.answerChecking(this.wrong, this.correct, val)
   }
   wronged(val) {
-    document.getElementById(val).style.backgroundColor = "rgba(250, 113, 99, 0.5)"
+    document.getElementById(val).style.backgroundColor = "rgba(253, 206, 206)"
     this.value.answerIsWrong(this.wrong, this.correct, val)
   }
 
