@@ -8,14 +8,17 @@ import { Router } from '@angular/router'
   styleUrls: ['./table-who-answers.component.css']
 })
 export class TableWhoAnswersComponent implements OnInit {
+  public currentUser
+  public allUsers
   public deleted = false
-  public CompanyName = "Amazon"
+  public CompanyName = ""
   public counter = 0
   public applicantsData;
   public peopleWhoAnswers = [];
   public arrayOfAnswers = []
-  public typeButton = "View Answers";
+  public typeButton = [];
   public applicantScore;
+  public applicantsID = []
 
   constructor(
     private http: RequestService,
@@ -23,6 +26,20 @@ export class TableWhoAnswersComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    this.http.allUsers().subscribe((users) => {
+      this.allUsers = users
+      this.http.getCurrentUser().subscribe((data) => {
+        this.currentUser = data
+        if(this.currentUser.name == "administrator") {
+          this.router.navigate(['/users'])
+        }
+        this.allUsers.forEach(element => {
+          if(element.username == this.currentUser.name){
+            this.CompanyName = element.company
+          }
+        });
+      })
+    })
     this.http.getScores().subscribe((scores) => {
       this.applicantScore = scores
     })
@@ -31,13 +48,21 @@ export class TableWhoAnswersComponent implements OnInit {
       this.applicantsData.forEach(owner => {
         this.applicantScore.forEach(score => {
           if(owner._id == score.dataid){
-            this.peopleWhoAnswers.push({owner: owner, score: score})
+            this.peopleWhoAnswers.push({owner: owner, score: score, alreadyHadScore: true})
+            this.applicantsID.push(owner._id)
           }
         })
-        if(!this.peopleWhoAnswers.includes(owner)) {
+        if(!this.applicantsID.includes(owner._id)){
           this.peopleWhoAnswers.push({owner: owner, score: 0})
         }
       })
+      this.peopleWhoAnswers.forEach(element => {
+        if(!element.alreadyHadScore) {
+          this.typeButton.push("View Answers")
+        }else {
+          this.typeButton.push("Update Score")
+        }
+      });
     })
   }
 
@@ -49,6 +74,13 @@ export class TableWhoAnswersComponent implements OnInit {
     this.peopleWhoAnswers.splice(index, 1)
     this.deleted = true
     this.counter += 1
+    this.http.delAnswer(data.owner._id).subscribe((value) => {
+      if(value) {
+        this.http.delScore({dataid: data.score._id}).subscribe((response) => {
+          console.log(response)
+        })
+      }
+    })
   }
 
 }

@@ -11,6 +11,7 @@ import { AnswersToCheckComponent } from './answers-to-check/answers-to-check.com
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { FooterComponent } from './footer/footer.component';
 import { CompanyDetailsComponent } from './company-details/company-details.component';
+import { UsersTablesComponent } from './users-tables/users-tables.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CompanyDetailsComponent } from './company-details/company-details.compo
     AnswersToCheckComponent,
     SidenavComponent,
     FooterComponent,
-    CompanyDetailsComponent
+    CompanyDetailsComponent,
+    UsersTablesComponent
   ],
   imports: [
     HttpClientModule,

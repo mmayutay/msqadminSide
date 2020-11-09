@@ -1,0 +1,34 @@
+<app-sidenav></app-sidenav>
+<div *ngIf="ifAddUser" class="card">
+    <div class="tooltip">
+        <button class="addAnother" (click)="showTrue()">+</button>
+        <span class="tooltiptext">Add Another User</span>
+    </div>
+    <table>
+        <tr id="header">
+            <td>Username</td>
+            <td>Password</td>
+            <td>Company Name</td>
+            <td>Delete</td>
+        </tr>
+        <tr *ngFor="let val of arrayOfAllUsers;">
+            <td>{{val.username}}</td>
+            <td>{{val.password}}</td>
+            <td>{{val.company}}</td>
+            <td><button id="delete">Delete User</button></td>
+        </tr>
+    </table>
+</div>
+<div *ngIf="!ifAddUser" class="card">
+    <form>
+        <p> Add New User</p>
+        <input placeholder="Fullname" type="text">
+        <input placeholder="Company" type="text"><br>
+        <input placeholder="Email" type="text">
+        <input placeholder="Contact Number" type="text"><br>
+        <input placeholder="Username" type="text"><br>
+        <input placeholder="Password" type="password"><br><br>
+        <button id="submitData" (click)="submitNewUser()">Submit</button>
+    </form>
+</div>
+<app-footer></app-footer>

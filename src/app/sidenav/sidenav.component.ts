@@ -10,8 +10,10 @@ import { RequestService } from "../../../Services/request.service";
   styleUrls: ['./sidenav.component.css']
 })
 export class SidenavComponent implements OnInit {
+  public arrayValue = []
   public User = {}
   public hideNav = false
+  public hide = false
 
   constructor(
     private router: Router,
@@ -22,6 +24,10 @@ export class SidenavComponent implements OnInit {
   ngOnInit(): void {
     this.request.getCurrentUser().subscribe((data) => {
       this.User = data
+      this.arrayValue.push(data)
+      if(this.arrayValue[0].name == "administrator") {
+        this.hide = true
+      }
     })
   }
 

@@ -1,0 +1,132 @@
+.card {
+    border-radius: 5px;
+    background-color: rgba(197, 220, 255, 0.5);
+    margin-bottom: 20%;
+    margin-top: 3%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    min-width: 600px;
+    width: 55%;
+    padding: 20px;
+  }
+  table, td, th {  
+    border: 1px solid rgb(155, 155, 155);
+    text-align: center;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 500px;
+  }
+  td {
+    padding: 10px;
+    font-size: 20px;
+  }
+  
+  #header {
+    padding: 15px;
+    font-size: 20px;
+    background-color: rgba(120, 161, 207, 0.5);
+  }
+  tr {
+    transition: 0.2s;
+  }
+  tr:hover {
+    color: white;
+    background-color: rgba(95, 149, 211, 0.6);
+  }
+  input {
+      width: 40%;
+      margin: 5px;
+      padding: 15px;
+      outline: none;
+      border-radius: 10px;
+      border: 1px solid #aaaaaa;
+  }
+  #submitData {
+    width: 20%; 
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: rgb(0, 0, 0);
+    background-color: rgb(197, 197, 197);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 9px #999;
+    transition: 0.2s;
+  }
+  #submitData:hover {
+    color: rgb(0, 0, 0);
+    background-color: rgb(106, 224, 112);
+  }
+  #submitData:active {
+    background-color: #a8a8a8;
+    box-shadow: 0 5px #999;
+    transform: translateY(4px);
+  }
+  #delete {
+    padding: 10px;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: rgb(0, 0, 0);
+    background-color: rgb(197, 197, 197);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 9px #999;
+    transition: 0.2s;
+  }
+  #delete:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(235, 46, 46);
+  }
+  #delete:active {
+    background-color: #5a5a5a;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+  .tooltip {
+    position: relative;
+    float: right;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 150px;
+    background-color: rgb(94, 94, 94);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    padding: 10px;
+    left: 105%;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+  .addAnother {
+      margin-bottom: 10%;
+      font-size: 30px;
+      padding: 12px;
+      width: 80px;
+      outline: none;
+      height: 20%;
+      border-radius: 50%;
+      border: 2px solid rgb(88, 88, 88);
+  }
+  p {
+      font-size: 40px;
+  }
