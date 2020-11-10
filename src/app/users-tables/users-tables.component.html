@@ -1,5 +1,5 @@
 <app-sidenav></app-sidenav>
-<div *ngIf="ifAddUser" class="card">
+<div *ngIf="!ifAddUser" class="card">
     <div class="tooltip">
         <button class="addAnother" (click)="showTrue()">+</button>
         <span class="tooltiptext">Add Another User</span>
@@ -11,23 +11,23 @@
             <td>Company Name</td>
             <td>Delete</td>
         </tr>
-        <tr *ngFor="let val of arrayOfAllUsers;">
+        <tr *ngFor="let val of arrayOfAllUsers; let i = index;">
             <td>{{val.username}}</td>
             <td>{{val.password}}</td>
             <td>{{val.company}}</td>
-            <td><button id="delete">Delete User</button></td>
+            <td><button id="delete" (click)="deleteUser(val, i)">Delete User</button></td>
         </tr>
     </table>
 </div>
-<div *ngIf="!ifAddUser" class="card">
+<div *ngIf="ifAddUser" class="card">
     <form>
         <p> Add New User</p>
-        <input placeholder="Fullname" type="text">
-        <input placeholder="Company" type="text"><br>
-        <input placeholder="Email" type="text">
-        <input placeholder="Contact Number" type="text"><br>
-        <input placeholder="Username" type="text"><br>
-        <input placeholder="Password" type="password"><br><br>
+        <input placeholder="Fullname" type="text" name="fullname" [(ngModel)]="userData.fullname">
+        <input placeholder="Company" type="text" name="company" [(ngModel)]="userData.company"><br>
+        <input placeholder="Email" type="text" name="email" [(ngModel)]="userData.email">
+        <input placeholder="Contact Number" type="text" name="contact" [(ngModel)]="userData.contactNumber"><br>
+        <input placeholder="Username" type="text" name="username" [(ngModel)]="userData.username"><br>
+        <input placeholder="Password" type="password" name="password" [(ngModel)]="userData.password"><br><br>
         <button id="submitData" (click)="submitNewUser()">Submit</button>
     </form>
 </div>

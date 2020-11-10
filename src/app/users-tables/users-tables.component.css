@@ -121,11 +121,15 @@
       margin-bottom: 10%;
       font-size: 30px;
       padding: 12px;
-      width: 80px;
+      width: 70px;
       outline: none;
-      height: 20%;
+      height: 15%;
       border-radius: 50%;
-      border: 2px solid rgb(88, 88, 88);
+      border: 2px solid rgb(184, 184, 184);
+  }
+  .addAnother:hover {
+    background-color: rgba(170, 170, 170, 0.5);
+    color: white;
   }
   p {
       font-size: 40px;

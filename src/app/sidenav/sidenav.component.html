@@ -1,5 +1,5 @@
 <div (mouseover)="hideAndShow(true)" class="miniSideNav">
-    <i class="fa fa-user" style="font-size:48px;color:red; margin-top: 175px;transition: .2s;"></i>
+    <i class="fa fa-user" style="font-size:48px;color:red; margin-top: 175px;margin-bottom: 40px;transition: .2s;"></i>
     <i *ngIf="!hide" class="fa fa-home" style="font-size:36px; padding-bottom: 8px;"></i>
     <i class="fa fa-edit" style="font-size:36px; padding-bottom: 8px;"></i>
     <i *ngIf="hide" class="fa fa-users" style="font-size:30px; padding-bottom: 10px;"></i>
@@ -11,9 +11,9 @@
             style="border-radius: 50%;">
         <p style="margin-top: 0;">Ms. Q Associates</p>
     </a>
-    <a class="currentLogged">{{User.name}}</a>
+    <a class="currentLogged" style="margin-bottom: 20%;">{{User.name}}</a>
     <a *ngIf="!hide" routerLink="/home">Home</a>
-    <a>Edit User</a>
+    <a (click)="goToUserInfo()">Edit User</a>
     <a *ngIf="hide" href="/users">Manage Users</a>
     <a (click)="logOut()">Log-out</a>
 </div>

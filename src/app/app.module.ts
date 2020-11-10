@@ -12,6 +12,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { FooterComponent } from './footer/footer.component';
 import { CompanyDetailsComponent } from './company-details/company-details.component';
 import { UsersTablesComponent } from './users-tables/users-tables.component';
+import { EditUserDetailsComponent } from './edit-user-details/edit-user-details.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { UsersTablesComponent } from './users-tables/users-tables.component';
     SidenavComponent,
     FooterComponent,
     CompanyDetailsComponent,
-    UsersTablesComponent
+    UsersTablesComponent,
+    EditUserDetailsComponent
   ],
   imports: [
     HttpClientModule,

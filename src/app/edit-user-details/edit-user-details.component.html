@@ -1,0 +1,13 @@
+<app-sidenav></app-sidenav>
+<div class="card">
+    <p>User's Name</p>
+    <input placeholder="Full Name" type="text" [(ngModel)]="user.fullname">
+    <input placeholder="Contact Number" type="text" [(ngModel)]="user.contactNumber">
+    <input placeholder="Email Address" type="text" [(ngModel)]="user.email">
+    <input placeholder="Company Name" type="text" [value]="user.company" [(ngModel)]="user.company">
+    <input placeholder="Username" type="text" [value]="user.username" [(ngModel)]="user.username"><br>
+    <input placeholder="Last Password" type="text" [value]="user.password" [(ngModel)]="user.password"><br>
+    <input placeholder="New Password" type="text" [(ngModel)]="newPassword"><br><br>
+    <button (click)="newData()">Submit</button>
+</div>
+<app-footer></app-footer>

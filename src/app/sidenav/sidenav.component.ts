@@ -47,5 +47,8 @@ export class SidenavComponent implements OnInit {
   hideAndShow(bool) {
     this.hideNav = bool
   }
+  goToUserInfo() {
+    this.router.navigate(['edit-my-info/'+this.arrayValue[0].id])
+  }
 
 }

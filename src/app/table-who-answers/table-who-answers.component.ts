@@ -30,11 +30,11 @@ export class TableWhoAnswersComponent implements OnInit {
       this.allUsers = users
       this.http.getCurrentUser().subscribe((data) => {
         this.currentUser = data
-        if(this.currentUser.name == "administrator") {
+        if(this.currentUser.name == "Administrator") {
           this.router.navigate(['/users'])
         }
         this.allUsers.forEach(element => {
-          if(element.username == this.currentUser.name){
+          if(element.fullname == this.currentUser.name){
             this.CompanyName = element.company
           }
         });
