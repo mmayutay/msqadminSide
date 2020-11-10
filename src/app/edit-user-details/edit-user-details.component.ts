@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./edit-user-details.component.css']
 })
 export class EditUserDetailsComponent implements OnInit {
-  public user = {username: "", password: "", company: ""}
+  public user;
   public newPassword = ""
 
   constructor(

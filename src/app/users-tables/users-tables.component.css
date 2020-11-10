@@ -13,7 +13,7 @@
     padding: 20px;
   }
   table, td, th {  
-    border: 1px solid rgb(155, 155, 155);
+    border-bottom: 1px solid rgb(155, 155, 155);
     text-align: center;
   }
   
@@ -85,7 +85,7 @@
   }
   #delete:hover {
     color: rgb(255, 255, 255);
-    background-color: rgb(235, 46, 46);
+    background-color: rgb(241, 126, 126);
   }
   #delete:active {
     background-color: #5a5a5a;
@@ -126,6 +126,7 @@
       height: 15%;
       border-radius: 50%;
       border: 2px solid rgb(184, 184, 184);
+      transition: .2s;
   }
   .addAnother:hover {
     background-color: rgba(170, 170, 170, 0.5);

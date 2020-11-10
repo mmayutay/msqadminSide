@@ -32,8 +32,8 @@ export class UsersTablesComponent implements OnInit {
     })
   }
 
-  showTrue() {
-    this.ifAddUser = true
+  showTrue(boolean) {
+    this.ifAddUser = boolean
   }
 
   submitNewUser() {
