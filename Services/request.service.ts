@@ -53,4 +53,10 @@ export class RequestService {
   addNewUser(newUser) {
     return this.http.post(this.url + "/register" , newUser)
   }
+  recoverPassword(userData) {
+    return this.http.post(this.url + "/recoverPassword", userData)
+  }
+  addingNewUserThroughEmail(newUser) {
+    return this.http.post(this.url + "/askToAddUser", newUser)
+  }
 }

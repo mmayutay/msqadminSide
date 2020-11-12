@@ -20,16 +20,16 @@
     </table>
 </div>
 <div *ngIf="ifAddUser" class="card">
-    <button style="float: left;font-size: 20px;outline: none;" (click)="showTrue(false)"> << Back</button>
-    <form>
-        <p> Add New User</p>
-        <input autocomplete="off" placeholder="Fullname" type="text" name="fullname" [(ngModel)]="userData.fullname">
-        <input autocomplete="off" placeholder="Company" type="text" name="company" [(ngModel)]="userData.company"><br>
-        <input autocomplete="off" placeholder="Email" type="text" name="email" [(ngModel)]="userData.email">
-        <input autocomplete="off" placeholder="Contact Number" type="text" name="contact" [(ngModel)]="userData.contactNumber"><br>
-        <input autocomplete="off" placeholder="Username" type="text" name="username" [(ngModel)]="userData.username"><br>
-        <input autocomplete="off" placeholder="Password" type="password" name="password" [(ngModel)]="userData.password"><br><br>
-        <button id="submitData" (click)="submitNewUser()">Submit</button>
-    </form>
+    <button style="float: left;font-size: 20px;outline: none;" (click)="showTrue(false)">
+        << Back</button> <form>
+            <p> Add New User</p>
+            <input autocomplete="off" placeholder="Fullname" type="text" name="fullname" [(ngModel)]="userData.fullname">
+            <input autocomplete="off" placeholder="Company" type="text" name="company" [(ngModel)]="userData.company"><br>
+            <input autocomplete="off" placeholder="Email" type="text" name="email" [(ngModel)]="userData.email">
+            <input autocomplete="off" placeholder="Contact Number" type="text" name="contact" [(ngModel)]="userData.contactNumber"><br>
+            <input autocomplete="off" placeholder="Username" type="text" name="username" [(ngModel)]="userData.username"><br>
+            <input autocomplete="off" placeholder="Password" type="password" name="password" [(ngModel)]="userData.password"><br><br>
+            <button id="submitData" (click)="submitNewUser()">Submit</button>
+            </form>
 </div>
 <app-footer></app-footer>

@@ -1,4 +1,4 @@
-<div class="w3-container w3-center w3-animate-bottom" id="card">
+<div class="w3-container w3-center w3-animate-bottom" id="card" *ngIf="!addUser">
     <p><b>Log-in</b> if you already had an account!</p>
     <form>
         <div class="container">
@@ -13,6 +13,25 @@
             <button (click)="logIn()">Log-in</button>
         </div>
     </form>
-    <a style="text-align: left;">Forgot Username/Password?</a>
+    <u><a style="text-align: left;" (click)="forgotPassword()">Forgot Username/Password?</a></u><br>
+    <u><a (click)="createToTrue()">Click to Ask the administrator to have an account</a></u>
+</div>
+<div class="w3-container w3-center w3-animate-bottom" *ngIf="addUser">
+    <div id="card">
+        <p>Fulfill the field so that the admin will easily create your account!</p>
+        <form>
+            <div class="container">
+                <div class="input-icons">
+                    <i class="fa fa-envelope icon" for="email"></i>
+                    <input placeholder="Email" name="email" type="text" [(ngModel)]="creatingUser.email">
+                </div>
+                <div class="input-icons">
+                    <i class="fa fa-user icon" for="username"></i>
+                    <input placeholder="Possible Username" name="username" type="text" [(ngModel)]="creatingUser.user">
+                </div>
+            </div>
+        </form><br><br>
+        <button (click)="addRequest()">Submit</button>
+    </div>
 </div>
 <app-company-details></app-company-details>

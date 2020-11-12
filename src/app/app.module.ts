@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { CompanyDetailsComponent } from './company-details/company-details.component';
 import { UsersTablesComponent } from './users-tables/users-tables.component';
 import { EditUserDetailsComponent } from './edit-user-details/edit-user-details.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { EditUserDetailsComponent } from './edit-user-details/edit-user-details.
     FooterComponent,
     CompanyDetailsComponent,
     UsersTablesComponent,
-    EditUserDetailsComponent
+    EditUserDetailsComponent,
+    NotFoundComponent
   ],
   imports: [
     HttpClientModule,

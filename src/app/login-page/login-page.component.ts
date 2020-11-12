@@ -9,8 +9,10 @@ import Swal from 'sweetalert2';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
+  public addUser = false
   public cr = "Trial!"
   public userdata = {username: "", password: ""}; 
+  public creatingUser = {email: "", user: ""}
   public bool;
 
   constructor(
@@ -33,6 +35,26 @@ export class LoginPageComponent implements OnInit {
       }else {
         Swal.fire("Snap!", "User or Password is incorrect!", "error")
       }
+    })
+  }
+  forgotPassword() {
+    this.http.recoverPassword(this.userdata).subscribe((returnValue) => {
+      if(returnValue) {
+        Swal.fire("Sorry", "We're very sorry about this, but don't worry, your password will be recovered soon!", "info")
+      }else {
+        Swal.fire("Oooppss", "We've found out that you are not a member, ask the administrator to have an account", 'info')
+      }
+    })
+  }
+  createToTrue() {
+    this.addUser = true
+  }
+  addRequest() {
+    this.http.addingNewUserThroughEmail(this.creatingUser).subscribe((data) => {
+      if(data) {
+        Swal.fire("Congrats", "I think this coming day, you will have your account!", "success")
+        window.location.reload()
+      } 
     })
   }
 }

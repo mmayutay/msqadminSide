@@ -25,7 +25,6 @@ export class UsersTablesComponent implements OnInit {
       this.allUsers = data
       this.allUsers.forEach(element => {
         if(element.username != "administrator") {
-          element.password = window.btoa(element.password)
           this.arrayOfAllUsers.push(element)
         }
       });
