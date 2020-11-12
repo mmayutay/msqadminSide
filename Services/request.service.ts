@@ -6,7 +6,7 @@ import { AuthGardService } from "../SeviceHelpers/auth-gard.service"
   providedIn: 'root'
 })
 export class RequestService {
-  public url = "http://localhost:8080";
+  public url = "https://only-for-backend.herokuapp.com";
   public attemptedUrl = ""
 
   constructor(

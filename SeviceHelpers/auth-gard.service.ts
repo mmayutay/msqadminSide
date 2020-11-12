@@ -57,7 +57,7 @@ export class AuthGardService {
   }
   request(url, user) {
     let base;
-    base = this.httpClient.post("http://localhost:8080/login", { username: user.username, password: user.password })
+    base = this.httpClient.post("https://only-for-backend.herokuapp.com/login", { username: user.username, password: user.password })
 
     const request = base.pipe(
       map((data: TokenResponse) => {
